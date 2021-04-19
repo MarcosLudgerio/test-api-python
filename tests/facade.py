@@ -1,14 +1,16 @@
 import requests
 
+base_url = "https://api-course-test-automatized.herokuapp.com"
+
 
 class Login:
     response = {}
     endpoint = "/auth/login"
     token = ""
 
-    def __init__(self, url, email, password):
+    def __init__(self, email, password):
         user = {"email": f"{email}", "password": f"{password}"}
-        self.response = requests.post(f"{self.url}/auth/login", json=user)
+        self.response = requests.post(f"{base_url}{self.endpoint}", json=user)
         self.token = self.response.text
 
     def status_code_connection(self):
@@ -17,24 +19,5 @@ class Login:
     def get_token(self):
         return self.token
 
-
-class User:
-    identify = 0
-    name = ""
-    email = ""
-    posts = []
-
-    def __init__(self, identify, name, email, posts):
-        self.identify = identify
-        self.name = name
-        self.email = email
-        self.posts = posts
-
-    def get_name(self):
-        return self.name
-
-    def get_email(self):
-        return self.email
-
-    def get_posts(self):
-        return self.posts
+    def get_response(self):
+        return self.response
