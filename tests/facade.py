@@ -45,9 +45,17 @@ class User:
     def get_status_code(self):
         return self.response.status_code
 
-    def create_new_user(self, user):
-        self.response = requests.get(f"{base_url}{self.endpoint}", json=user)
+    def create_new_user_obj(self, user):
+        self.response = requests.post(f"{base_url}{self.endpoint}", json=user)
         return self.response
+
+    def create_new_user(self, name, email, password):
+        user = {
+            "name": name,
+            "email": email,
+            "password": password
+        }
+        return self.create_new_user_obj(user)
 
     def mail_generation(self):
         pt1 = "pt1" + str(randint(0, 999))
@@ -55,3 +63,8 @@ class User:
         pt3 = "a3d" + str(randint(0, 999))
         mail = pt1 + pt2 + pt3 + "@mail.com"
         return mail
+
+    def update_user_obj(self, token, user):
+        headers = {"Authorization": token}
+        self.response = requests.put(f"{base_url}{self.endpoint}", headers=headers, json=user)
+        return self.response
