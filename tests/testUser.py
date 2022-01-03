@@ -22,7 +22,7 @@ def test_create_new_user():
     assert response.json()["name"] == "Marcos"
 
 
-def test_update_user():
+def test_update_user(): 
     user_update = {
         "name": "Updated",
     }
