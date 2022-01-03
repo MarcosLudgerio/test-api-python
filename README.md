@@ -21,12 +21,12 @@ A API utilizada nos testes pode ser acessada [aqui](https://api-course-test-auto
 
 ## ✔️ Testes
 Os testes realizados foram feitos no módulo usuário:
-- [ ] POST /auth/login Login com sucesso
-- [ ] POST /auth/login Login com falha - senha inválida
-- [ ] POST /auth/login Login com falha - usuário não cadastrado no sistema
-- [ ] POST /auth/login  Login com falha - email inválido
-- [ ] POST /auth/login Login com falha - campo email em branco
-- [ ] POST /auth/login Login com falha - campo senha em branco
+- [ ] POST /auth/login login com sucesso
+- [ ] POST /auth/login login com falha - senha inválida
+- [ ] POST /auth/login login com falha - usuário não cadastrado no sistema
+- [ ] POST /auth/login  login com falha - email inválido
+- [ ] POST /auth/login login com falha - campo email em branco
+- [ ] POST /auth/login login com falha - campo senha em branco
 - [ ] GET api/users/ - recuperar todos os usuários
 - [ ] GET api/users/details - recuperar dados do usuário logado
 - [ ] POST api/users/ - cruar usuário com sucesso
